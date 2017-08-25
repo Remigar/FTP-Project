@@ -3,7 +3,7 @@ import os
 import commands
 from socket import *
 
-import send_receive_funcs
+from send_receive_funcs import *
 
 
 
@@ -39,12 +39,14 @@ while 1:
 			print (line)
 
 	elif command_tokenized[0] == "get":
-		if len(command_tokenized) != 3:#user didn't enter command correctly
+		if len(command_tokenized) != 3: #user didn't enter command correctly
 			print ("format: get <filename>")
 			continue
+
 		send_message(clientSocket, command, MAX_MESSAGE_SIZE)
 		response = receive_message(clientSocket, ACK_MESSAGE_SIZE)
 		response_tokenized = response.split()
+
 		print (response_tokenized[0])
 		if response_tokenized[0] == "NACK":
 			print ("File not found")

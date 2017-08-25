@@ -1,3 +1,5 @@
+from socket import *
+
 def receive_message(sock, size):
 	result = ""
 	tmpBuffer = ""

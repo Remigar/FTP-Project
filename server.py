@@ -3,7 +3,7 @@ import sys
 import commands
 import os
 
-import send_receive_funcs
+from send_receive_funcs import *
 
 
 MAX_MESSAGE_SIZE = 128 #maximum size for a control message
